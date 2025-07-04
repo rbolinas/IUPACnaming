@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IUPAC Naming Basics & Quiz</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter for a clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS for the Inter font and collapsible sections */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Styles for the collapsible headers to indicate interactivity */
+        .collapsible-header {
+            cursor: pointer;
+            user-select: none; /* Prevent text selection on double-click */
+        }
+        /* Initially hide the content of collapsible sections */
+        .collapsible-content {
+            display: none;
+            overflow: hidden; /* Ensures content doesn't overflow when hidden */
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out; /* Smooth transition for opening/closing */
+            max-height: 0; /* Start with 0 height for transition */
+            opacity: 0; /* Start with 0 opacity for transition */
+        }
+        /* When active, show the content with a smooth transition */
+        .collapsible-content.active {
+            display: block;
+            max-height: 500px; /* A value large enough to contain the content */
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-100 to-purple-100 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white p-8 rounded-xl shadow-2xl max-w-4xl w-full space-y-8">
+        <!-- Main Title of the Application -->
+        <h1 class="text-4xl font-extrabold text-center text-gray-800 mb-8">IUPAC Naming Basics & Quiz</h1>
+
+        <!-- Introduction for the students -->
+        <p class="text-lg text-gray-700 text-center mb-6">
+            Welcome to the basics of IUPAC naming for organic compounds! This guide will help you understand how to systematically name simple molecules. Expand the sections below to learn the rules, then test your knowledge with the quiz!
+        </p>
+
+        <!-- Naming Rules Section - Uses collapsible cards for each rule -->
+        <div class="space-y-4">
+            <h2 class="text-2xl font-bold text-gray-800 border-b-2 pb-2 mb-4">IUPAC Naming Rules: Your Step-by-Step Guide</h2>
+
+            <!-- Rule 1: Find the Longest Carbon Chain -->
+            <div class="rounded-lg bg-blue-50 p-4 shadow-sm">
+                <div class="collapsible-header flex justify-between items-center text-xl font-semibold text-blue-800">
+                    <span>1. Find the Longest Carbon Chain (Parent Chain)</span>
+                    <span class="toggle-icon text-2xl font-bold">+</span>
+                </div>
+                <div class="collapsible-content mt-2 text-gray-700 transition-all duration-300 ease-in-out">
+                    <p>Identify the longest continuous chain of carbon atoms. This chain gives the base name of your compound.</p>
+                    <ul class="list-disc list-inside mt-2 ml-4">
+                        <li>1 Carbon: Methane (Meth-)</li>
+                        <li>2 Carbons: Ethane (Eth-)</li>
+                        <li>3 Carbons: Propane (Prop-)</li>
+                        <li>4 Carbons: Butane (But-)</li>
+                        <li>5 Carbons: Pentane (Pent-)</li>
+                        <li>6 Carbons: Hexane (Hex-)</li>
+                        <li>...and so on!</li>
+                    </ul>
+                    <p class="mt-2 font-medium">Example: <code>CH₃-CH₂-CH₂-CH₃</code> (4 carbons) is Butane.</p>
+                </div>
+            </div>
+
+            <!-- Rule 2: Number the Carbon Atoms -->
+            <div class="rounded-lg bg-green-50 p-4 shadow-sm">
+                <div class="collapsible-header flex justify-between items-center text-xl font-semibold text-green-800">
+                    <span>2. Number the Carbon Atoms</span>
+                    <span class="toggle-icon text-2xl font-bold">+</span>
+                </div>
+                <div class="collapsible-content mt-2 text-gray-700 transition-all duration-300 ease-in-out">
+                    <p>Start numbering from the end that gives the substituents (branches or functional groups like -OH or halogens) the *lowest possible numbers*.</p>
+                    <p class="mt-2 font-medium">Example: <code>CH₃-CH(CH₃)-CH₂-CH₃</code></p>
+                    <p>If you number from left, the methyl group is at carbon 2. If you number from right, it's at carbon 3. So, number from the left to get 2-methylbutane.</p>
+                </div>
+            </div>
+
+            <!-- Rule 3: Identify & Name Substituents -->
+            <div class="rounded-lg bg-purple-50 p-4 shadow-sm">
+                <div class="collapsible-header flex justify-between items-center text-xl font-semibold text-purple-800">
+                    <span>3. Identify & Name Substituents (Branches & Functional Groups)</span>
+                    <span class="toggle-icon text-2xl font-bold">+</span>
+                </div>
+                <div class="collapsible-content mt-2 text-gray-700 transition-all duration-300 ease-in-out">
+                    <p>These are groups attached to the parent chain.</p>
+                    <ul class="list-disc list-inside mt-2 ml-4">
+                        <li>**Alkyl Groups:** (Carbon-based branches)
+                            <ul class="list-circle list-inside ml-4">
+                                <li><code>-CH₃</code>: Methyl</li>
+                                <li><code>-CH₂CH₃</code>: Ethyl</li>
+                                <li><code>-CH₂CH₂CH₃</code>: Propyl</li>
+                            </ul>
+                        </li>
+                        <li class="mt-2">**Halogens:** (Treated as substituents)
+                            <ul class="list-circle list-inside ml-4">
+                                <li><code>-F</code>: Fluoro</li>
+                                <li><code>-Cl</code>: Chloro</li>
+                                <li><code>-Br</code>: Bromo</li>
+                                <li><code>-I</code>: Iodo</li>
+                            </ul>
+                        </li>
+                        <li class="mt-2">**Alcohol:** (Functional group)
+                            <ul class="list-circle list-inside ml-4">
+                                <li><code>-OH</code>: Hydroxyl group. The suffix of the parent chain changes from <code>-ane</code> to <code>-anol</code> (e.g., ethanol, propanol).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Rule 4: Assemble the Name -->
+            <div class="rounded-lg bg-yellow-50 p-4 shadow-sm">
+                <div class="collapsible-header flex justify-between items-center text-xl font-semibold text-yellow-800">
+                    <span>4. Assemble the Name</span>
+                    <span class="toggle-icon text-2xl font-bold">+</span>
+                </div>
+                <div class="collapsible-content mt-2 text-gray-700 transition-all duration-300 ease-in-out">
+                    <ul class="list-disc list-inside mt-2 ml-4">
+                        <li>List substituents alphabetically (e.g., bromo before chloro, ethyl before methyl). Ignore prefixes like 'di-', 'tri-' when alphabetizing.</li>
+                        <li>Use prefixes (<code>di-</code>, <code>tri-</code>, <code>tetra-</code>) if the same substituent appears multiple times (e.g., <code>dimethyl</code>).</li>
+                        <li>Use hyphens (<code>-</code>) to separate numbers from words (e.g., <code>2-methyl</code>).</li>
+                        <li>Use commas (<code>,</code>) to separate numbers (e.g., <code>2,3-dimethyl</code>).</li>
+                        <li>The last substituent (or the functional group suffix) is directly followed by the parent chain name (e.g., <code>2-methylbutane</code>, <code>2-propanol</code>).</li>
+                    </ul>
+                    <p class="mt-2 font-medium">Example: <code>2-Methylbutane</code></p>
+                    <p class="font-medium">Example: <code>2-Propanol</code></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="mt-12 space-y-6">
+            <h2 class="text-3xl font-bold text-gray-800 text-center border-b-2 pb-2 mb-6">Quiz Time! Name That Compound!</h2>
+
+            <div class="bg-gray-50 p-6 rounded-lg shadow-inner">
+                <p class="text-xl font-semibold text-gray-700 mb-4">Compound Structure:</p>
+                <div id="compound-display" class="bg-gray-100 p-4 rounded-md text-center text-2xl font-mono text-blue-900 border-2 border-dashed border-gray-300 min-h-[80px] flex items-center justify-center">
+                    <!-- Compound structure will be displayed here by JavaScript -->
+                </div>
+
+                <div class="mt-6">
+                    <label for="user-answer" class="block text-lg font-medium text-gray-700 mb-2">Your IUPAC Name:</label>
+                    <input type="text" id="user-answer" class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg" placeholder="e.g., 2-methylpropane">
+                </div>
+
+                <div class="mt-6 flex flex-col sm:flex-row justify-center gap-4">
+                    <button id="submit-answer" class="px-6 py-3 bg-blue-600 text-white font-bold rounded-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105">
+                        Submit Answer
+                    </button>
+                    <button id="next-problem" class="px-6 py-3 bg-purple-600 text-white font-bold rounded-lg shadow-md hover:bg-purple-700 transition duration-300 ease-in-out transform hover:scale-105">
+                        Next Problem
+                    </button>
+                </div>
+
+                <div id="feedback" class="mt-6 text-center text-lg font-semibold min-h-[40px]">
+                    <!-- Feedback (correct/incorrect) will be displayed here -->
+                </div>
+
+                <div class="mt-4 text-center text-xl font-bold text-gray-800">
+                    Score: <span id="score">0</span> / <span id="total-problems">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for the interactive elements and quiz logic
+        // Using window.onload to ensure all resources (including Tailwind) are fully loaded
+        // before the script attempts to interact with the DOM, which can sometimes be
+        // more robust in embedded environments like Canvas.
+        window.onload = function() {
+            // Array of compound objects for the quiz
+            // Each object has a 'structure' (text representation) and its correct IUPAC 'name'
+            const compounds = [
+                { structure: 'CH₃-CH(CH₃)-CH₃', name: '2-methylpropane' },
+                { structure: 'CH₃-CH₂-CH(CH₃)-CH₃', name: '2-methylbutane' },
+                { structure: 'CH₃-CH₂-CH(CH₂CH₃)-CH₂-CH₃', name: '3-ethylpentane' },
+                { structure: 'CH₃-CH(Cl)-CH₃', name: '2-chloropropane' },
+                { structure: 'CH₃-CH₂-CH₂-OH', name: '1-propanol' },
+                { structure: 'CH₃-CH(OH)-CH₂-CH₃', name: '2-butanol' },
+                { structure: 'CH₃-CH(CH₃)-CH(CH₃)-CH₃', name: '2,3-dimethylbutane' },
+                { structure: 'CH₃-CH(Br)-CH₂-CH₂-CH₃', name: '2-bromopentane' },
+                { structure: 'CH₃-CH₂-CH₂-CH₂-CH₂-OH', name: '1-pentanol' },
+                { structure: 'CH₃-CH(CH₃)-CH₂-CH₂-CH₃', name: '2-methylpentane' }
+            ];
+
+            // Quiz state variables
+            let currentCompoundIndex = -1; // Tracks the index of the currently displayed compound
+            let score = 0; // User's correct answers
+            let totalProblems = 0; // Total problems attempted
+            let askedProblems = new Set(); // Stores indices of problems already asked to avoid repetition
+
+            // Get references to DOM elements
+            const compoundDisplay = document.getElementById('compound-display');
+            const userAnswerInput = document.getElementById('user-answer');
+            const submitButton = document.getElementById('submit-answer');
+            const nextButton = document.getElementById('next-problem');
+            const feedbackDisplay = document.getElementById('feedback');
+            const scoreDisplay = document.getElementById('score');
+            const totalProblemsDisplay = document.getElementById('total-problems');
+
+            // --- Collapsible Sections Logic ---
+            // Add event listeners to all collapsible headers
+            document.querySelectorAll('.collapsible-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling; // Get the content div immediately after the header
+                    const toggleIcon = header.querySelector('.toggle-icon'); // Get the +/- icon
+
+                    // Toggle the 'active' class on the content to show/hide it
+                    content.classList.toggle('active');
+
+                    // Change the toggle icon based on content visibility
+                    if (content.classList.contains('active')) {
+                        toggleIcon.textContent = '-'; // Change to minus when open
+                    } else {
+                        toggleIcon.textContent = '+'; // Change to plus when closed
+                    }
+                });
+            });
+
+            // --- Quiz Functions ---
+
+            /**
+             * Displays a random problem from the compounds array that hasn't been asked yet.
+             * Updates the quiz state and UI.
+             */
+            function displayRandomProblem() {
+                // Check if all problems have been asked
+                if (askedProblems.size === compounds.length) {
+                    compoundDisplay.textContent = "Quiz complete! You've answered all questions. Great job!";
+                    submitButton.disabled = true;
+                    nextButton.disabled = true;
+                    userAnswerInput.disabled = true;
+                    feedbackDisplay.textContent = 'Refresh the page to restart the quiz.';
+                    feedbackDisplay.className = 'mt-6 text-center text-lg font-semibold text-gray-700';
+                    return;
+                }
+
+                let randomIndex;
+                // Loop until a new, unasked problem index is found
+                do {
+                    randomIndex = Math.floor(Math.random() * compounds.length);
+                } while (askedProblems.has(randomIndex));
+
+                // Set the current compound and mark it as asked
+                currentCompoundIndex = randomIndex;
+                askedProblems.add(randomIndex);
+
+                // Update the UI
+                compoundDisplay.textContent = compounds[currentCompoundIndex].structure;
+                totalProblems++; // Increment total problems attempted
+                totalProblemsDisplay.textContent = totalProblems;
+                updateScoreDisplay(); // Update score display
+                feedbackDisplay.textContent = ''; // Clear previous feedback
+                userAnswerInput.value = ''; // Clear user input
+                userAnswerInput.disabled = false; // Enable input field
+                submitButton.disabled = false; // Enable submit button
+                userAnswerInput.focus(); // Focus on the input field for quick entry
+            }
+
+            /**
+             * Checks the user's answer against the correct answer.
+             * Provides feedback and updates the score.
+             */
+            function checkAnswer() {
+                // Prevent checking if no problem is displayed or if already submitted
+                if (currentCompoundIndex === -1 || submitButton.disabled) return;
+
+                // Get and normalize user's answer (trim whitespace, convert to lowercase)
+                const userAnswer = userAnswerInput.value.trim().toLowerCase();
+                // Get and normalize correct answer
+                const correctAnswer = compounds[currentCompoundIndex].name.toLowerCase();
+
+                // Compare answers and provide feedback
+                if (userAnswer === correctAnswer) {
+                    feedbackDisplay.textContent = 'Correct! 🎉';
+                    feedbackDisplay.className = 'mt-6 text-center text-lg font-semibold text-green-700';
+                    score++; // Increment score for correct answer
+                } else {
+                    feedbackDisplay.textContent = `Incorrect. The correct answer is: ${compounds[currentCompoundIndex].name}`;
+                    feedbackDisplay.className = 'mt-6 text-center text-lg font-semibold text-red-700';
+                }
+                updateScoreDisplay(); // Update score display
+                userAnswerInput.disabled = true; // Disable input after submission
+                submitButton.disabled = true; // Disable submit button after submission
+            }
+
+            /**
+             * Updates the displayed score.
+             */
+            function updateScoreDisplay() {
+                scoreDisplay.textContent = score;
+            }
+
+            // --- Event Listeners for Quiz Buttons and Input ---
+            submitButton.addEventListener('click', checkAnswer);
+            nextButton.addEventListener('click', displayRandomProblem);
+            // Allow pressing Enter key to submit the answer
+            userAnswerInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    checkAnswer();
+                }
+            });
+
+            // --- Initialize the Quiz ---
+            // Display the first random problem when the page loads
+            displayRandomProblem();
+        };
+    </script>
+</body>
+</html>
